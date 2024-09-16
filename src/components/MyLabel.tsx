@@ -21,17 +21,22 @@ interface Props {
    * Font color
    */
   fontColor?: string;
+  /**
+   * Background color
+   */
+  backgroundColor?: string;
 }
 export const MyLabel = ({
   label,
   size = "normal",
   color,
-  allCaps = true,
+  allCaps = false,
   fontColor,
+  backgroundColor='transparent'
 }: Props) => {
   return (
     <span className={`${size} ${color} label`}
-    style={{color: fontColor}}>
+    style={{color: fontColor, backgroundColor}}>
       {allCaps ? label.toUpperCase() : label}
     </span>
   );
